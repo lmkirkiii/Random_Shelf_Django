@@ -1,0 +1,9 @@
+{% extends 'shelf/base.html' %}
+{% block content %}
+<h2>{{ treasure.title }} <a href="{% url 'treasure_edit' pk=treasure.pk %}">(edit)</a> <a href="{% url 'treasure_delete' pk=treasure.pk %}">(delete)</a></h2>
+<h4>{{ treasure.description }}</h4>
+
+<img src="{{ treasure.img_url }}" alt="" class="treasure-photo">
+<img src="{{ treasure.file_treasure }}" alt="" class="treasure-photo">
+
+{% endblock %}

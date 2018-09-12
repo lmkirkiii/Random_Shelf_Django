@@ -1,0 +1,1 @@
+web: gunicorn random-shelf.wsgi —-log-file -

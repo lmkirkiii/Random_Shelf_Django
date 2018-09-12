@@ -1,0 +1,14 @@
+{% extends 'shelf/base.html' %}
+
+{% block content %}
+    <h2>Add a Treasure <a href="/treasures/new">(+)</a></h2>
+    <h2>Add a Treasure by File<a href="/treasures_file/new">(+)</a></h2>
+    <ul>
+        {% for treasure in treasures %}
+            <li>
+                <a href="{% url 'treasure_detail' pk=treasure.pk %}"><img src="{{ treasure.img_url }}" alt="" class="treasure-photo"></a>
+                <a href="{% url 'file_treasure_detail' pk=file_treasure.pk %}"><img src="{{ file_treasure.file_path.url }}" alt="" class="treasure-photo"></a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
